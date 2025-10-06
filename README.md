@@ -1,1 +1,0 @@
-# terraform-azure-aks-hcp-vault

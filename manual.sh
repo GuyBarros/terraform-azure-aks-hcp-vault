@@ -1,6 +1,6 @@
-export VAULT_TOKEN=hvs.JtrNrY5TeXwLEe2QoX4jk5sx
+export VAULT_TOKEN=<YOUR_TOKEN_HERE>
 export VAULT_NAMESPACE=root
-export VAULT_ADDR=https://server-0.guystack1.guy.aws.sbx.hashicorpdemo.com:8200
+export VAULT_ADDR=<vault_address_here>
 export VAULT_SKIP_VERIFY=true
 
 helm install --create-namespace --namespace vault-secrets-operator vault-secrets-operator hashicorp/vault-secrets-operator
@@ -34,7 +34,7 @@ sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' > kubernetes
 
 
 vault write -namespace=$VAULT_NAMESPACE auth/jwt/config \
-jwks_url="https://guy-aks-f2lkx-m01wqt8n.hcp.uksouth.azmk8s.io:443/" \
+jwks_url="https://guy-aks-f2lkx-m01wqt8n.hcp.uksouth.azmk8s.io:443/openid/v1/jwks" \
 jwks_ca_pem=@kubernetes.pem
 
 
