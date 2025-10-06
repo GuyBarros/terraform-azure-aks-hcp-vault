@@ -16,3 +16,4 @@ output "resource_group" {
 output "api_server_allowed_cidrs" {
   value = azurerm_kubernetes_cluster.aks.api_server_access_profile[0].authorized_ip_ranges
 }
+
